@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Password Strength Checker</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <div class="logo">🔐</div>
+
+        <h1>Password Strength Checker</h1>
+
+        <p>
+            Check how strong your password is and learn how to improve it.
+        </p>
+    </header>
+
+
+    <!-- Main Card -->
+    <main class="card">
+
+        <!-- Password Input -->
+        <div class="input-section">
+
+            <label for="password">Enter Password</label>
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="togglePassword"
+                    class="icon-button"
+                    aria-label="Show password"
+                >
+                    👁️
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Strength Meter -->
+        <div class="strength-section">
+
+            <div class="strength-header">
+
+                <span>Password Strength</span>
+
+                <span id="strengthText">
+                    No password
+                </span>
+
+            </div>
+
+            <div class="strength-bar">
+
+                <div
+                    id="strengthProgress"
+                    class="strength-progress">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Requirements -->
+        <section class="requirements">
+
+            <h2>Password Requirements</h2>
+
+            <div class="requirement" id="lengthRequirement">
+                <span class="check">○</span>
+                <span>At least 8 characters</span>
+            </div>
+
+            <div class="requirement" id="uppercaseRequirement">
+                <span class="check">○</span>
+                <span>At least one uppercase letter</span>
+            </div>
+
+            <div class="requirement" id="lowercaseRequirement">
+                <span class="check">○</span>
+                <span>At least one lowercase letter</span>
+            </div>
+
+            <div class="requirement" id="numberRequirement">
+                <span class="check">○</span>
+                <span>At least one number</span>
+            </div>
+
+            <div class="requirement" id="specialRequirement">
+                <span class="check">○</span>
+                <span>At least one special character</span>
+            </div>
+
+        </section>
+
+
+        <!-- Suggestions -->
+        <section
+            id="suggestionsSection"
+            class="suggestions"
+        >
+
+            <h2>💡 Suggestions</h2>
+
+            <ul id="suggestionsList">
+                <li>Enter a password to get suggestions.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- Password Generator -->
+        <section class="generator">
+
+            <h2>🎲 Generate Strong Password</h2>
+
+            <div class="generator-row">
+
+                <input
+                    type="text"
+                    id="generatedPassword"
+                    readonly
+                    placeholder="Your generated password"
+                >
+
+                <button
+                    type="button"
+                    id="generateButton"
+                    class="primary-button"
+                >
+                    Generate
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                id="useGeneratedButton"
+                class="secondary-button"
+            >
+                Use Generated Password
+            </button>
+
+        </section>
+
+
+        <!-- Security Notice -->
+        <div class="security-notice">
+
+            <span>🛡️</span>
+
+            <div>
+                <strong>Your privacy matters</strong>
+
+                <p>
+                    Your password is checked locally in your browser
+                    and is never stored or sent to the server.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>
+            Password Strength Checker • Built with Python, Flask,
+            HTML, CSS & JavaScript
+        </p>
+    </footer>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
